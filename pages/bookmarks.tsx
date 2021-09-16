@@ -4,9 +4,12 @@ import PageTransition from '@comp/page-transition'
 import groupBy from 'lodash.groupby'
 import format from 'date-fns/format'
 import parseISO from 'date-fns/parseISO'
+import startOfWeek from 'date-fns/startOfWeek'
+import endOfWeek from 'date-fns/endOfWeek'
 import { tr } from 'date-fns/locale'
 import PageTitle from '@comp/page-title'
 import { Bookmark } from '@type/bookmark'
+
 
 function BookmarkPage({ data, weeks }) {
   return (
@@ -24,7 +27,7 @@ function BookmarkPage({ data, weeks }) {
               text-2xl text-gray-400
               dark:text-gray-600"
             >
-              {date}. Hafta, 2021
+              {date}
             </h4>
             <div className="mt-6 space-y-6">
               {data[date].map((item) => {
@@ -38,19 +41,22 @@ function BookmarkPage({ data, weeks }) {
   )
 }
 
+function getDateRangeOfWeek(day: Date){
+  const startDay: string = format(startOfWeek(day, {weekStartsOn: 1}), "d.M", {locale: tr})
+  const endDay: string = format(endOfWeek(day, {weekStartsOn: 1}), "d.M, yy", {locale: tr})
+
+  return startDay + " - " + endDay
+};
+
 export async function getStaticProps() {
   const data: [Bookmark] = await getBookmark()
 
   const dataGroupByDay = groupBy(data, (item: Bookmark) => {
-    const weekNumber: string = format(parseISO(item.created), 'w', {
-      locale: tr
-    })
-    // TODO: -1'e neden gerek var?
-    return parseInt(weekNumber) - 1
+    const weekNumber: string = getDateRangeOfWeek(parseISO(item.created))
+    return weekNumber
   })
 
   const weeks = Object.keys(dataGroupByDay)
-    .map((o) => parseInt(o))
     .reverse()
 
   return {
