@@ -5,7 +5,7 @@ const getBookmark = async (page = 0) => {
     `https://api.raindrop.io/rest/v1/raindrops/0`,
     `?perpage=50`,
     `&page=${page}`,
-    `&search=[{"key":"tag","val":"history"}]`,
+    `&search=[{"key":"tag","val":"public"}]`,
     `&sort=-created`
   ].join('')
 

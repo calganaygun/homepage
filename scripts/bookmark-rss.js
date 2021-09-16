@@ -7,7 +7,7 @@ const getBookmark = async () => {
   const query = [
     `https://api.raindrop.io/rest/v1/raindrops/0`,
     `?perpage=50`,
-    `&search=[{"key":"tag","val":"history"}]`,
+    `&search=[{"key":"tag","val":"public"}]`,
     `&sort=-created`
   ].join('')
 
@@ -23,10 +23,10 @@ const getBookmark = async () => {
 
 async function generate() {
   const feed = new RSS({
-    title: 'Feyzli linkler',
-    webMaster: 'Adem ilter',
-    site_url: 'https://ademilter.com',
-    feed_url: 'https://ademilter.com/feed.xml'
+    title: 'Çalgan\'dan linkler',
+    webMaster: 'Çalgan Aygün',
+    site_url: 'https://calganaygun.com',
+    feed_url: 'https://calganaygun.com/feed.xml'
   })
 
   const bookmarks = await getBookmark()
