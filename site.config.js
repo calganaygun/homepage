@@ -3,7 +3,7 @@ module.exports = {
   description: 'İlham aldığım şeyleri paylaşıyorum',
   lang: 'tr',
   siteUrl: 'https://calganaygun.com',
-  googleAnalytic: 'UA-17768654-1',
+  googleAnalytic: '',
   author: {
     email: 'calganaygun@gmail.com',
     name: 'Çalgan Aygün'
