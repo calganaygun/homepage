@@ -6,7 +6,7 @@ const nextConfig = (phase) => {
 
   return {
     env: {
-      API_URL: isDev ? 'http://localhost:3000' : 'https://ademilter.com'
+      API_URL: isDev ? 'http://localhost:3000' : 'https://calganaygun.com'
     },
     images: {
       domains: ['dl.airtable.com', 'images.unsplash.com']

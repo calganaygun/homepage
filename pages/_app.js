@@ -13,7 +13,7 @@ export default function MyApp({ Component, pageProps }) {
       redirectUri={process.env.API_URL}
     >
       <Head>
-        <title>Adem ilter</title>
+        <title>Çalgan Aygün</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 

@@ -1,22 +1,22 @@
 module.exports = {
-  title: 'Adem ilter',
-  description: 'Web uygulamaları yapıyorum',
+  title: 'Çalgan Aygün',
+  description: 'İlham aldığım şeyleri paylaşıyorum',
   lang: 'tr',
-  siteUrl: 'https://ademilter.com',
+  siteUrl: 'https://calganaygun.com',
   googleAnalytic: 'UA-17768654-1',
   author: {
-    email: 'ademilter@gmail.com',
-    name: 'Adem ilter'
+    email: 'calganaygun@gmail.com',
+    name: 'Çalgan Aygün'
   },
   social: {
-    unsplash: 'https://unsplash.com/@ademilter',
-    vsco: 'https://vsco.co/adem/gallery',
-    instagram: 'https://instagram.com/ademilter',
-    twitter: 'https://twitter.com/ademilter',
-    medium: 'https://medium.com/@ademilter',
-    github: 'https://github.com/ademilter',
-    youtube: 'https://youtube.com/ademilter',
-    feyz: 'https://t.me/feyzli',
-    superpeer: 'https://superpeer.com/adem'
+    unsplash: 'https://unsplash.com/@calganaygun',
+    //vsco: 'https://vsco.co/adem/gallery',
+    instagram: 'https://instagram.com/calganaygun',
+    twitter: 'https://twitter.com/calganaygun',
+    medium: 'https://medium.com/@calganaygun',
+    github: 'https://github.com/calganaygun',
+    //youtube: 'https://youtube.com/ademilter',
+    //feyz: 'https://t.me/feyzli',
+    superpeer: 'https://superpeer.com/calganaygun'
   }
 }

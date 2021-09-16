@@ -7,7 +7,7 @@ function Footer() {
       <div className="c-small">
         <p>
           Bu web sitesinin kaynak kodlarına{' '}
-          <A href="https://github.com/ademilter/homepage" blank>
+          <A href="https://github.com/calganaygun/homepage" blank>
             Github üzerinden
           </A>{' '}
           ulaşabilirsiniz.

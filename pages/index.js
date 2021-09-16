@@ -28,7 +28,7 @@ function HomePage() {
         <div className="mt-8">
           <A
             blank
-            href="https://superpeer.com/adem/-/hey"
+            href="https://superpeer.com/calganaygun"
             className="
             block py-4 px-6 bg-yellow-100 text-yellow-900 rounded-xl
             hover:bg-opacity-75

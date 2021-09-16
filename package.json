@@ -1,9 +1,9 @@
 {
-  "name": "ademilter-website",
+  "name": "calganaygun-website",
   "description": "my personal website",
   "private": true,
   "version": "1.0.0",
-  "author": "Adem ilter <ademilter@gmail.com>",
+  "author": "Çalgan Aygün <calganaygun@gmail.com>",
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
