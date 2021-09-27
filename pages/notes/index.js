@@ -1,7 +1,8 @@
-import { getAllNodes } from 'next-mdx'
 import NextLink from 'next/link'
 import PageTransition from '@comp/page-transition'
 import PageTitle from '@comp/page-title'
+import medium from '@lib/medium'
+import devto from '@lib/devto'
 
 function NotePage({ posts }) {
   return (
@@ -19,11 +20,11 @@ function NotePage({ posts }) {
               <article key={post.slug} className="mb-10">
                 <NextLink href={post.url} passHref>
                   <a className="text-lg leading-6 font-bold text-highlight">
-                    {post.frontMatter.title}
+                    {post.title}
                   </a>
                 </NextLink>
                 <p>
-                  <time>{post.frontMatter.date}</time>
+                  <time>{post.readableDate}</time>
                 </p>
               </article>
             ))
@@ -37,12 +38,21 @@ function NotePage({ posts }) {
 }
 
 export async function getStaticProps() {
-  const posts = await getAllNodes('post')
+  let mediumPosts = await medium.getStories()
+  let devtoPosts = await devto.getStories()
+
+  const posts = mediumPosts
+    .concat(devtoPosts)
+    .sort(function (a, b) {
+      return b.date - a.date
+    })
+    .map((post) => (({ date, ...o }) => o)(post))
 
   return {
     props: {
       posts
-    }
+    },
+    revalidate: 86400
   }
 }
 
