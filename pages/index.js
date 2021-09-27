@@ -9,19 +9,19 @@ function HomePage() {
       <div className="c-small">
         <div className="space-y-6">
           <h1 className="text-2xl font-bold text-highlight">
-            Ben Adem ilter.
+            Ben Çalgan.
             <br />
-            İstanbul'da yaşayan Dijital Ürün Tasarımcısıyım.
+            Ankara'da yaşayan bir yazılım geliştiriciyim.
           </h1>
 
           <p className="text-xl">
-            Tasarım araçları, front-end teknolojileri, sokak fotoğrafçılığı ve
-            tipografi gibi konularla yakından ilgileniyorum.
+            Cloud teknolojileri, telsizcilik, IoT, back-end teknolojileri,
+            fotoğrafçılık ve model roketçilik ile yakından ilgileniyorum.
           </p>
 
           <p className="text-xl">
-            Sektördeki eski teknoloji ve alışkanlıkları
-            yenilerle değiştirmek için youtube kanalımda modern türkçe içerikler üretiyorum.
+            Eğlendiğim ve ilgi duyduğum şeyler hakkında çeşitli yazılar yazıyor
+            ve içerikler hazırlıyorum.
           </p>
         </div>
 

@@ -31,10 +31,6 @@ function Social() {
         <IconTwitter />
       </SocialButton>
 
-      <SocialButton href={SiteConfig.social.youtube}>
-        <IconYoutube />
-      </SocialButton>
-
       <SocialButton href={SiteConfig.social.github}>
         <IconGithub />
       </SocialButton>
