@@ -6,9 +6,9 @@ import IconMenu from '@comp/icons/menu'
 const MENU = {
   '/': 'Giriş',
   '/photos': 'Fotoğraf',
-  '/videos': 'Eğitim',
+  // '/videos': 'Eğitim',
   '/notes': 'Notlar',
-  '/desk': 'Masam',
+  // '/desk': 'Masam',
   '/bookmarks': 'Yer imleri'
   // { name: 'Hakkımda', url: '/about' },
   // { name: 'S.S.S.', url: '/faq' },

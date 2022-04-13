@@ -43,8 +43,7 @@ function HomePage() {
           <Social />
         </div>
       </div>
-
-      <div className="c-large mt-20">
+{/*       <div className="c-large mt-20">
         <NextImage
           src="/photos/i-am.jpg"
           alt="Adem ilter"
@@ -52,7 +51,7 @@ function HomePage() {
           height={1018}
           layout="responsive"
         />
-      </div>
+      </div> */}
     </PageTransition>
   )
 }
