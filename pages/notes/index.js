@@ -10,8 +10,7 @@ function NotePage({ posts }) {
       <div className="c-small">
         <PageTitle>Kendime notlar</PageTitle>
         <p>
-          bu sayfa henüz beta aşamasında. medium'da yayınladığım yazıları en
-          kısa sürede buraya taşıyacağım inş :)
+          medium ve dev.to yazılarım otomatik olarak buraya ekleniyor :)
         </p>
 
         <div className="mt-20">

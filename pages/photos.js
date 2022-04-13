@@ -14,9 +14,7 @@ function PhotosPage({ photos, stats }) {
     <PageTransition>
       <div className="c-small">
         <PageTitle>
-          Fotoğraf çekmek etrafımdaki şeyleri daha iyi görmemi sağlıyor. Çevrem
-          hakkında farkındalığı, detayları görebilmemi ve doğru anı
-          yakalabilmeyi öğretiyor.
+          unsplash hesabımda paylaştığım fotoğraflarımı burada bulabilirsiniz.
         </PageTitle>
 
         <div className="grid grid-cols-2 gap-10 mt-10">

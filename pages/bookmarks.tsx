@@ -16,8 +16,7 @@ function BookmarkPage({ data, weeks }) {
     <PageTransition>
       <div className="c-small">
         <PageTitle>
-          İnternette gezinirken beğendiğim ve beni takip edenlerin de
-          beğeneceğini düşündüğüm, belli bir kategorisi olmayan karışık şeyler.
+          beğenip kendime not almak için kaydettiğim yazılar, siteler ve toollar. genelde benim ilgi alanlarıma yönelikler :D
         </PageTitle>
 
         {weeks.map((date) => (
