@@ -1,6 +1,6 @@
 import cn from 'classnames'
 
-function A({ children, href, blank, className, ...props }) {
+function A({ children = undefined, href = undefined, blank= undefined, className = undefined, ...props }) {
   const isBlank = blank
     ? {
         rel: 'noopener noreferrer',
