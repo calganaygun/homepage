@@ -11,7 +11,6 @@ import PageTitle from '@comp/page-title'
 import { Bookmark } from '@type/bookmark'
 import A from '@comp/a';
 import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
 
 function BookmarkPage({ data, weeks }) {
 
@@ -24,11 +23,12 @@ function BookmarkPage({ data, weeks }) {
     return bookmarks.filter(item => item.tags.includes(filter))
   }
 
-  const {asPath} = useRouter()
 
-  const [filter, setFilter] = useState(asPath.split("#")[1] || "");
+  const [filter, setFilter] = useState("");
 
   useEffect(() => {
+      setFilter(window.location.hash.slice(1) || "")
+
       const onHashChanged = () => {
           setFilter(window.location.hash.slice(1));
       };
@@ -47,6 +47,7 @@ function BookmarkPage({ data, weeks }) {
           beğenip kendime not almak için kaydettiğim yazılar, siteler ve toollar. genelde benim ilgi alanlarıma yönelikler :D
         </PageTitle>
         
+
         {filter ? <div className="text-xl"><A href="#" className="text-sm text-gray-500">Filtreyi Temizle</A></div> : null}
 
         {filterBookmarksByDate(filter, weeks).map((date) => (
