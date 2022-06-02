@@ -9,17 +9,47 @@ import endOfWeek from 'date-fns/endOfWeek'
 import { tr } from 'date-fns/locale'
 import PageTitle from '@comp/page-title'
 import { Bookmark } from '@type/bookmark'
-
+import A from '@comp/a';
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 
 function BookmarkPage({ data, weeks }) {
+
+  function filterBookmarksByDate(filter, weeks) {
+    if(filter === "") return weeks
+    return weeks.filter(date => {return data[date].find(item => item.tags.includes(filter))})
+  }
+  function filterBookmarksByTag(filter, bookmarks: Bookmark[]) {
+    if(filter === "") return bookmarks
+    return bookmarks.filter(item => item.tags.includes(filter))
+  }
+
+  const {asPath} = useRouter()
+
+  const [filter, setFilter] = useState(asPath.split("#")[1] || "");
+
+  useEffect(() => {
+      const onHashChanged = () => {
+          setFilter(window.location.hash.slice(1));
+      };
+
+      window.addEventListener("hashchange", onHashChanged);
+
+      return () => {
+          window.removeEventListener("hashchange", onHashChanged);
+      };
+  }, []);
+
   return (
     <PageTransition>
       <div className="c-small">
         <PageTitle>
           beğenip kendime not almak için kaydettiğim yazılar, siteler ve toollar. genelde benim ilgi alanlarıma yönelikler :D
         </PageTitle>
+        
+        {filter ? <div className="text-xl"><A href="#" className="text-sm text-gray-500">Filtreyi Temizle</A></div> : null}
 
-        {weeks.map((date) => (
+        {filterBookmarksByDate(filter, weeks).map((date) => (
           <div key={date} className="mt-20">
             <h4
               className="
@@ -29,7 +59,7 @@ function BookmarkPage({ data, weeks }) {
               {date}
             </h4>
             <div className="mt-6 space-y-6">
-              {data[date].map((item) => {
+              {filterBookmarksByTag(filter, data[date]).map((item) => {
                 return <BookmarkCard key={item._id} {...item} />
               })}
             </div>

@@ -16,7 +16,7 @@ function BookmarkCard(item: Bookmark) {
       {<p className="text-gray-500 truncate">{item.excerpt}</p>}
 
       <div className="mt-1 flex items-center text-gray-250">
-        {item.tags.map(tag => (<span key={item._id + tag}>{"#" + tag}</span>)).reduce((prev, curr) => prev.length ? [prev, <span>・</span>, curr] : [curr], [])}
+        {item.tags.map(tag => (<A href={'#' + tag} key={item._id + tag}>{"#" + tag}</A>)).reduce((prev, curr) => prev.length ? [prev, <span>・</span>, curr] : [curr], [])}
       </div>
       <div className="mt-1 flex items-center text-gray-250">
         <span>{item.domain}</span>
