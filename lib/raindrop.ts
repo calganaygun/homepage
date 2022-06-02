@@ -2,10 +2,10 @@ import { Bookmark } from '@type/bookmark'
 
 const getBookmark = async (page = 0) => {
   const query = [
-    `https://api.raindrop.io/rest/v1/raindrops/0`,
+    `https://api.raindrop.io/rest/v1/raindrops/25093237`,
     `?perpage=50`,
     `&page=${page}`,
-    `&search=[{"key":"tag","val":"public"}]`,
+    //`&search=[{"key":"tag","val":"public"}]`,
     `&sort=-created`
   ].join('')
 
