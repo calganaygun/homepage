@@ -87,7 +87,6 @@ export async function getStaticProps() {
   })
 
   const weeks = Object.keys(dataGroupByDay)
-    .reverse()
 
   return {
     props: {
