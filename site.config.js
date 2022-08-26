@@ -5,7 +5,7 @@ module.exports = {
   siteUrl: 'https://calganaygun.com',
   googleAnalytic: '',
   author: {
-    email: 'hey@',
+    email: 'hey@calgan.cloud',
     name: 'Çalgan Aygün'
   },
   social: {
