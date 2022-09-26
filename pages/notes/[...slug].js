@@ -4,7 +4,6 @@ import { mdxComponents } from 'components/mdx-components'
 import React from 'react'
 import PageTransition from '@comp/page-transition'
 import dynamic from 'next/dynamic'
-const Comments = dynamic(() => import('@comp/comment'), { ssr: false })
 
 function PostPage({ post }) {
   const content = useHydrate(post, {
@@ -30,7 +29,6 @@ function PostPage({ post }) {
           <div className="prose dark:prose-dark">{content}</div>
         </article>
 
-        <Comments />
       </div>
     </PageTransition>
   )
