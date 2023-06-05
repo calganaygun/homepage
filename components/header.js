@@ -7,6 +7,7 @@ const MENU = {
   '/': 'Giriş',
   '/photos': 'Fotoğraf',
   // '/videos': 'Eğitim',
+  '/ai-art': 'AI Art',
   '/notes': 'Notlar',
   // '/desk': 'Masam',
   '/bookmarks': 'Yer imleri'
