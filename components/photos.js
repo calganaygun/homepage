@@ -31,6 +31,7 @@ function Photos({ data }) {
                 width={item.width}
                 height={item.height}
                 layout="responsive"
+                unoptimized
               />
             </A>
           </div>
