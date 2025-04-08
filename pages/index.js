@@ -33,12 +33,12 @@ function HomePage() {
             block py-4 px-6 bg-yellow-100 text-yellow-900 rounded-xl
             hover:bg-opacity-75
             dark:bg-blue-900 dark:bg-opacity-50 dark:text-blue-400"
+            disabled={true}
           >
             Benimle 1:1 görüşmek istersen, Superpeer profilimden uygun bir zaman
             dilimini satın alabilirsin ⟶
           </A>
         </div>
-
         <div className="mt-10">
           <Social />
         </div>

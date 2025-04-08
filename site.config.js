@@ -17,6 +17,7 @@ module.exports = {
     github: 'https://github.com/calganaygun',
     //youtube: 'https://youtube.com/ademilter',
     //feyz: 'https://t.me/feyzli',
-    superpeer: 'https://superpeer.com/calganaygun'
+    superpeer: 'https://superpeer.com/calganaygun',
+    gdev: 'https://g.dev/calgan',
   }
 }

@@ -13,6 +13,16 @@ function A({ children = undefined, href = undefined, blank= undefined, className
       href={href}
       {...isBlank}
       className={cn('hover:underline', className)}
+      style={
+        props.disabled
+          ? {
+              pointerEvents: 'none',
+              cursor: 'default',
+              textDecoration: 'line-through',
+              color: 'var(--text-color)',
+            }
+          : {}
+      }
       {...props}
     >
       {children}
