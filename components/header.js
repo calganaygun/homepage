@@ -4,13 +4,13 @@ import { useState, useEffect } from 'react'
 import IconMenu from '@comp/icons/menu'
 
 const MENU = {
-  '/': 'Giriş',
-  '/photos': 'Fotoğraf',
+  '/': 'Home',
+  '/photos': 'Photos',
   // '/videos': 'Eğitim',
   '/ai-art': 'AI Art',
-  '/notes': 'Notlar',
+  '/notes': 'Notes',
   // '/desk': 'Masam',
-  '/bookmarks': 'Yer imleri'
+  '/bookmarks': 'Bookmarks'
   // { name: 'Hakkımda', url: '/about' },
   // { name: 'S.S.S.', url: '/faq' },
   // { name: 'Alıntılar', url: '/quotes' },

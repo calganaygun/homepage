@@ -12,7 +12,7 @@ function ArtPage() {
         <PageTransition>
             <div className="c-small">
                 <PageTitle>
-                    stable diffusion/generative ai toolarıyla yaratıp hesabımda paylaştığım resimlerimin bazılarını burada bulabilirsiniz.
+                    You can find some of the images I created and shared on my account using stable diffusion/generative AI tools here.
                 </PageTitle>
             </div>
 

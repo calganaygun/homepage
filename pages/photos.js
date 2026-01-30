@@ -14,7 +14,7 @@ function PhotosPage({ photos, stats }) {
     <PageTransition>
       <div className="c-small">
         <PageTitle>
-          unsplash hesabımda paylaştığım fotoğraflarımı burada bulabilirsiniz.
+          You can find the photos I share on my Unsplash account here.
         </PageTitle>
 
         <div className="grid grid-cols-2 gap-10 mt-10">
