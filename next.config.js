@@ -9,8 +9,18 @@ const nextConfig = (phase) => {
       API_URL: isDev ? 'http://localhost:3000' : 'https://calganaygun.com'
     },
     images: {
-      domains: ['dl.airtable.com', 'images.unsplash.com']
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'dl.airtable.com',
+        },
+        {
+          protocol: 'https',
+          hostname: 'images.unsplash.com',
+        },
+      ],
     },
+    turbopack: {},
     pwa: {
       dest: 'public',
       disable: isDev
