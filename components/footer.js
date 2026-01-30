@@ -9,8 +9,7 @@ function Footer() {
           You can access the source code of this website{' '}
           <A href="https://github.com/calganaygun/homepage" blank>
             on Github
-          </A>
-          .
+          </A>.
         </p>
       </div>
     </footer>
