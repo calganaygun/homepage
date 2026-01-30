@@ -1,10 +1,10 @@
 const withPWA = require('next-pwa')
 const { PHASE_DEVELOPMENT_SERVER } = require('next/constants')
 
-const nextConfig = (phase) => {
+module.exports = (phase) => {
   const isDev = phase === PHASE_DEVELOPMENT_SERVER
 
-  return {
+  const nextConfig = {
     env: {
       API_URL: isDev ? 'http://localhost:3000' : 'https://calganaygun.com'
     },
@@ -21,10 +21,6 @@ const nextConfig = (phase) => {
       ],
     },
     turbopack: {},
-    pwa: {
-      dest: 'public',
-      disable: isDev
-    },
     webpack: (config, { dev, isServer }) => {
       // Replace React with Preact only in client production build
       if (!dev && !isServer) {
@@ -37,6 +33,9 @@ const nextConfig = (phase) => {
       return config
     }
   }
-}
 
-module.exports = (phase) => withPWA(nextConfig(phase))
+  return withPWA({
+    dest: 'public',
+    disable: isDev
+  })(nextConfig)
+}
