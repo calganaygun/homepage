@@ -5,10 +5,9 @@ function HomePage() {
     <PageTransition>
       <div className="c-small">
         <p>
-          Amacım; kaliteli türkçe içeriğin az olduğu türkiye sektöründe
-          globaldeki kaliteli kanallarla aynı seviyede içerikler üretebilmek ve
-          sektördeki eski alışkanlıkları yenilerle değiştirerek daha iyi bir
-          yere taşımasına ön ayak olmak.
+          My goal is to produce high-quality content at the same level as global channels
+          in the Turkish tech sector where quality content is scarce, and to lead the way
+          in replacing old habits with better practices to elevate the industry.
         </p>
       </div>
     </PageTransition>

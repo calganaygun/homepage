@@ -6,11 +6,10 @@ function Footer() {
     <footer className="pb-14">
       <div className="c-small">
         <p>
-          Bu web sitesinin kaynak kodlarına{' '}
+          You can access the source code of this website{' '}
           <A href="https://github.com/calganaygun/homepage" blank>
-            Github üzerinden
-          </A>{' '}
-          ulaşabilirsiniz.
+            on Github
+          </A>.
         </p>
       </div>
     </footer>

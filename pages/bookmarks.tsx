@@ -44,11 +44,11 @@ function BookmarkPage({ data, weeks }) {
     <PageTransition>
       <div className="c-small">
         <PageTitle>
-          beğenip kendime not almak için kaydettiğim yazılar, siteler ve toollar. genelde benim ilgi alanlarıma yönelikler :D
+          Articles, websites, and tools I saved to bookmark and note for myself. Usually related to my interests :D
         </PageTitle>
         
 
-        {filter ? <div className="text-xl"><A href="#" className="text-sm text-gray-500">Filtreyi Temizle</A></div> : null}
+        {filter ? <div className="text-xl"><A href="#" className="text-sm text-gray-500">Clear Filter</A></div> : null}
 
         {filterBookmarksByDate(filter, weeks).map((date) => (
           <div key={date} className="mt-20">

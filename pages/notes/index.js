@@ -8,9 +8,9 @@ function NotePage({ posts }) {
   return (
     <PageTransition>
       <div className="c-small">
-        <PageTitle>Kendime notlar</PageTitle>
+        <PageTitle>Notes to myself</PageTitle>
         <p>
-          medium ve dev.to yazılarım otomatik olarak buraya ekleniyor :)
+          My Medium and dev.to articles are automatically added here :)
         </p>
 
         <div className="mt-20">
@@ -28,7 +28,7 @@ function NotePage({ posts }) {
               </article>
             ))
           ) : (
-            <p>Hiç not yazılmamış. İlginç...</p>
+            <p>No notes written yet. Interesting...</p>
           )}
         </div>
       </div>

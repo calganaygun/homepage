@@ -24,26 +24,26 @@
     "isomorphic-unfetch": "^3.1.0",
     "lodash.groupby": "^4.6.0",
     "nanoid": "^3.1.25",
-    "next": "^11.1.0",
+    "next": "^16.1.6",
     "next-mdx": "^0.6.1",
     "next-pwa": "^5.2.25",
     "preact": "^10.5.14",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "swr": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^16.7.4",
-    "@types/react": "18.0.1",
-    "@types/react-dom": "^17.0.9",
+    "@types/react": "^19.2.10",
+    "@types/react-dom": "^19.2.3",
     "autoprefixer": "^10.3.3",
     "postcss": "^8.3.6",
     "prettier": "^2.3.2",
     "rss": "^1.2.2",
     "tailwindcss": "^2.2.8",
-    "typescript": "^4.4.2"
+    "typescript": "^5.9.3"
   },
   "volta": {
-    "node": "16.15.1"
+    "node": "22.13.0"
   }
 }

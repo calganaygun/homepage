@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Çalgan Aygün',
-  description: 'İlham aldığım şeyleri paylaşıyorum',
-  lang: 'tr',
+  description: 'Sharing things that inspire me',
+  lang: 'en',
   siteUrl: 'https://calganaygun.com',
   googleAnalytic: '',
   author: {

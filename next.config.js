@@ -1,20 +1,26 @@
 const withPWA = require('next-pwa')
 const { PHASE_DEVELOPMENT_SERVER } = require('next/constants')
 
-const nextConfig = (phase) => {
+module.exports = (phase) => {
   const isDev = phase === PHASE_DEVELOPMENT_SERVER
 
-  return {
+  const nextConfig = {
     env: {
       API_URL: isDev ? 'http://localhost:3000' : 'https://calganaygun.com'
     },
     images: {
-      domains: ['dl.airtable.com', 'images.unsplash.com']
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'dl.airtable.com',
+        },
+        {
+          protocol: 'https',
+          hostname: 'images.unsplash.com',
+        },
+      ],
     },
-    pwa: {
-      dest: 'public',
-      disable: isDev
-    },
+    turbopack: {},
     webpack: (config, { dev, isServer }) => {
       // Replace React with Preact only in client production build
       if (!dev && !isServer) {
@@ -27,6 +33,9 @@ const nextConfig = (phase) => {
       return config
     }
   }
-}
 
-module.exports = (phase) => withPWA(nextConfig(phase))
+  return withPWA({
+    dest: 'public',
+    disable: isDev
+  })(nextConfig)
+}

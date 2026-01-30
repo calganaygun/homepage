@@ -9,19 +9,18 @@ function HomePage() {
       <div className="c-small">
         <div className="space-y-6">
           <h1 className="text-2xl font-bold text-highlight">
-            Ben Çalgan.
+            I'm Çalgan.
             <br />
-            Ankara'da yaşayan bir yazılım geliştiriciyim.
+            A software developer living in Warsaw.
           </h1>
 
           <p className="text-xl">
-            Cloud teknolojileri, telsizcilik, IoT, back-end teknolojileri,
-            fotoğrafçılık ve model roketçilik ile yakından ilgileniyorum.
+            I'm deeply interested in cloud technologies, amateur radio, IoT, back-end technologies,
+            photography, and model rocketry.
           </p>
 
           <p className="text-xl">
-            Eğlendiğim ve ilgi duyduğum şeyler hakkında çeşitli yazılar yazıyor
-            ve içerikler hazırlıyorum.
+            I write articles and create content about things I find interesting and enjoy.
           </p>
         </div>
 
@@ -35,8 +34,7 @@ function HomePage() {
             dark:bg-blue-900 dark:bg-opacity-50 dark:text-blue-400"
             disabled={true}
           >
-            Benimle 1:1 görüşmek istersen, Superpeer profilimden uygun bir zaman
-            dilimini satın alabilirsin ⟶
+            If you want to have a 1:1 meeting with me, you can purchase a suitable time slot from my Superpeer profile ⟶
           </A>
         </div>
         <div className="mt-10">
