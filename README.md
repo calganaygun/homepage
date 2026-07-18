@@ -1,31 +1,24 @@
-## Requirements
-- Node.js
-- npm or yarn (I'm using yarn)
+# Calgan Aygün — Personal Website
 
-## How do I run it on my own computer?
+Built with [Astro](https://astro.build). Fully static output.
 
-1. First, navigate to the project directory in the terminal
-
-2. Rename `.env.example` file to `.env` and get the necessary keys from Airtable and Raindrop accounts, then add them to the following sections
+## Commands
 
 ```bash
-AIRTABLE_API_KEY=
-AIRTABLE_BASE_ID=
-RAINDROP_ACCESS_TOKEN=
+npm install
+npm run dev    # development server
+npm run build  # static build → dist/
+npm run preview # preview the build
 ```
 
-3. Install dependencies
+## Routes
 
-```bash
-yarn
-```
-
-4. Start the development server
-
-```bash
-yarn dev
-```
-
-5. You're all set
-
-Open [http://localhost:3000](http://localhost:3000) in your browser
+| Path | Description |
+|---|---|
+| `/` | Homepage |
+| `/photos` | Unsplash photo gallery |
+| `/ai-art` | AI-generated art gallery |
+| `/notes` | Blog posts from Medium & dev.to |
+| `/notes/speaker-profile` | Public speaker profile |
+| `/bookmarks` | Raindrop.io bookmarks |
+| `/about` | About |

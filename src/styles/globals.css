@@ -1,0 +1,73 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  src: url("/fonts/Inter-roman.var.woff2?v=3.15") format("woff2");
+}
+
+html {
+  scroll-behavior: smooth;
+  @apply bg-white text-gray-600 antialiased dark:bg-gray-900 dark:text-gray-400;
+}
+
+body {
+  min-height: 100vh;
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.c-small {
+  @apply mx-auto max-w-screen-sm px-4;
+}
+
+.c-large {
+  @apply mx-auto max-w-screen-xl px-4;
+}
+
+.text-highlight {
+  @apply text-gray-900 dark:text-gray-50;
+}
+
+.skip-link {
+  @apply fixed top-3 left-3 z-50 -translate-y-20 rounded bg-gray-900 px-4 py-2 text-white transition-transform focus:translate-y-0 dark:bg-white dark:text-gray-900;
+}
+
+.page-transition {
+  animation: page-enter 400ms ease-out both;
+}
+
+.prose :is(h2, h3, h4, h5) {
+  scroll-margin-top: 8rem;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .page-transition {
+    animation: none;
+  }
+}

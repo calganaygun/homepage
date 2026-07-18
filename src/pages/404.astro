@@ -1,0 +1,23 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Header from '@comp/Header.astro';
+import Footer from '@comp/Footer.astro';
+
+export const prerender = true;
+---
+
+<BaseLayout title="Page not found" description="The requested page could not be found." noindex>
+  <Fragment slot="header">
+    <Header />
+  </Fragment>
+
+  <div class="c-small">
+    <h1 class="text-4xl font-bold text-highlight">Page not found</h1>
+    <p class="mt-4">The page you requested does not exist.</p>
+    <a href="/" class="mt-6 inline-block font-semibold text-highlight hover:underline">Return home</a>
+  </div>
+
+  <Fragment slot="footer">
+    <Footer />
+  </Fragment>
+</BaseLayout>
