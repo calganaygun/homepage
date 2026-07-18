@@ -1,12 +1,6 @@
-.next
-.idea
-node_modules
-public/ui
-public/sw*
-public/workbox*
+node_modules/
+dist/
 .DS_Store
-out/
 .env
 .env.local
-public/feed.xml
-tsconfig.tsbuildinfo
+*.tsbuildinfo

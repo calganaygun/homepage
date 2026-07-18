@@ -1,0 +1,164 @@
+---
+export const prerender = false;
+
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Header from '@comp/Header.astro';
+import Footer from '@comp/Footer.astro';
+import { formatDistanceToNowStrict, parseISO } from 'date-fns';
+import { tr } from 'date-fns/locale';
+import { getBookmark } from '@lib/raindrop';
+import type { Bookmark } from '@lib/raindrop';
+
+let rawBookmarks: Bookmark[] = [];
+let loadError = '';
+try {
+  rawBookmarks = await getBookmark();
+} catch (error) {
+  console.error('Unable to load Raindrop bookmarks', error);
+  loadError = 'Bookmarks are temporarily unavailable. Please try again later.';
+  Astro.response.status = 503;
+  Astro.response.statusText = 'Service Unavailable';
+}
+
+Astro.response.headers.set(
+  'Cache-Control',
+  loadError
+    ? 'no-store'
+    : 'public, max-age=0, s-maxage=7200, stale-while-revalidate=86400'
+);
+
+function getDateRangeOfWeek(day: Date) {
+  const d = new Date(day);
+  const dayOfWeek = d.getDay();
+  const diffToMonday = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
+  const monday = new Date(d);
+  monday.setDate(d.getDate() + diffToMonday);
+  const sunday = new Date(monday);
+  sunday.setDate(monday.getDate() + 6);
+  const fmt = (date: Date) => `${date.getDate()}.${date.getMonth() + 1}`;
+  return fmt(monday) + ' - ' + fmt(sunday) + ', ' + String(sunday.getFullYear()).slice(-2);
+}
+
+const data: Record<string, Bookmark[]> = {};
+for (const item of rawBookmarks) {
+  const week = getDateRangeOfWeek(parseISO(item.created));
+  if (!data[week]) data[week] = [];
+  data[week].push(item);
+}
+const weeks = Object.keys(data);
+---
+
+<BaseLayout title="Bookmarks" description="Articles, websites, and tools saved by Çalgan Aygün.">
+  <Fragment slot="header">
+    <Header active="/bookmarks" />
+  </Fragment>
+
+  <div class="c-small" data-bookmark-filter-root>
+    <h1 class="text-2xl text-highlight">
+      Articles, websites, and tools I saved to bookmark and note for myself. Usually related to my interests :D
+    </h1>
+
+    <p class="mt-4 hidden text-sm text-gray-500" data-filter-status>
+      Filtering by <strong class="text-highlight" data-filter-name></strong>.{' '}
+      <a href="#" class="hover:underline">Clear filter</a>
+    </p>
+
+    {loadError ? (
+      <p class="mt-20">{loadError}</p>
+    ) : weeks.length > 0 ? weeks.map((date) => (
+      <section class="mt-20" data-bookmark-week>
+        <h2 class="text-2xl text-gray-400 dark:text-gray-600">
+          {date}
+        </h2>
+        <div class="mt-6 space-y-6">
+          {data[date].map((item) => (
+            <article data-bookmark data-tags={JSON.stringify(item.tags)}>
+              <h3 class="text-lg leading-6 font-bold text-highlight">
+                <a href={item.link} target="_blank" rel="noopener noreferrer" class="hover:underline">
+                  {item.title}
+                </a>
+              </h3>
+              {item.excerpt ? <p class="text-gray-500 truncate">{item.excerpt}</p> : null}
+              {item.tags.length > 0 ? (
+                <div class="mt-1 flex items-center text-gray-500 gap-1 flex-wrap">
+                  {item.tags.map((tag, index) => (
+                    <Fragment>
+                      {index > 0 ? <span class="text-gray-300">・</span> : null}
+                      <a href={'#' + encodeURIComponent(tag)} class="hover:underline">#{tag}</a>
+                    </Fragment>
+                  ))}
+                </div>
+              ) : null}
+              <div class="mt-1 flex items-center text-gray-500 gap-1">
+                <span>{item.domain}</span>
+                <span class="text-gray-300">・</span>
+                <time datetime={item.created}>
+                  {formatDistanceToNowStrict(parseISO(item.created), { addSuffix: true, locale: tr })}
+                </time>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    )) : (
+      <div class="mt-20">
+        <p>No bookmarks yet.</p>
+      </div>
+    )}
+    <p class="mt-20 hidden" data-filter-empty>No bookmarks match this tag.</p>
+  </div>
+
+  <Fragment slot="footer">
+    <Footer />
+  </Fragment>
+</BaseLayout>
+
+<script>
+  const initializeBookmarkFilter = () => {
+    const root = document.querySelector<HTMLElement>('[data-bookmark-filter-root]');
+    if (!root || root.dataset.initialized) return;
+    root.dataset.initialized = 'true';
+
+    const bookmarks = [...document.querySelectorAll<HTMLElement>('[data-bookmark]')];
+    const weeks = [...document.querySelectorAll<HTMLElement>('[data-bookmark-week]')];
+    const status = document.querySelector<HTMLElement>('[data-filter-status]');
+    const filterName = document.querySelector<HTMLElement>('[data-filter-name]');
+    const empty = document.querySelector<HTMLElement>('[data-filter-empty]');
+
+    const filter = () => {
+      let tag = '';
+      try {
+        tag = decodeURIComponent(window.location.hash.slice(1));
+      } catch {
+        tag = window.location.hash.slice(1);
+      }
+
+      let visibleCount = 0;
+      for (const bookmark of bookmarks) {
+        let tags = [];
+        try {
+          tags = JSON.parse(bookmark.dataset.tags ?? '[]');
+        } catch {
+          tags = [];
+        }
+        const visible = !tag || tags.includes(tag);
+        bookmark.classList.toggle('hidden', !visible);
+        if (visible) visibleCount += 1;
+      }
+
+      for (const week of weeks) {
+        week.classList.toggle('hidden', !week.querySelector('[data-bookmark]:not(.hidden)'));
+      }
+
+      status?.classList.toggle('hidden', !tag);
+      if (filterName) filterName.textContent = tag ? `#${tag}` : '';
+      empty?.classList.toggle('hidden', !tag || visibleCount > 0);
+    };
+
+    window.addEventListener('hashchange', filter);
+    filter();
+  };
+
+  initializeBookmarkFilter();
+  document.addEventListener('astro:page-load', initializeBookmarkFilter);
+</script>

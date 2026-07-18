@@ -1,0 +1,69 @@
+---
+export const prerender = false;
+
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Header from '@comp/Header.astro';
+import Footer from '@comp/Footer.astro';
+import { getPhotos, getStats } from '@lib/unsplash';
+
+const photos = await getPhotos();
+const stats = await getStats();
+const unsplashUrl = 'https://unsplash.com/@calganaygun';
+---
+
+<BaseLayout title="Photos" description="Photography by Çalgan Aygün, including photos published on Unsplash.">
+  <Fragment slot="header">
+    <Header active="/photos" />
+  </Fragment>
+
+  <div class="c-small">
+    <h1 class="text-2xl text-highlight">
+      You can find the photos I share on my Unsplash account here.
+    </h1>
+
+    <div class="grid grid-cols-2 gap-10 mt-10">
+      <div class="border border-gray-200 rounded-xl p-4 dark:border-gray-700">
+        <a href={unsplashUrl} target="_blank" rel="noopener noreferrer" class="hover:underline">
+          <div>Unsplash Views</div>
+        </a>
+        <p class="mt-1 text-3xl font-bold spacing-sm text-highlight">
+          {stats?.views?.total?.toLocaleString() ?? '—'}
+        </p>
+      </div>
+      <div class="border border-gray-200 rounded-xl p-4 dark:border-gray-700">
+        <a href={unsplashUrl} target="_blank" rel="noopener noreferrer" class="hover:underline">
+          <div>Unsplash Downloads</div>
+        </a>
+        <p class="mt-1 text-3xl font-bold spacing-sm text-highlight">
+          {stats?.downloads?.total?.toLocaleString() ?? '—'}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="c-large mt-20">
+    <div class="columns-1 gap-8 sm:columns-2 lg:columns-3">
+      {
+        photos?.length > 0 ? photos.map((item) => (
+          <div class="mb-8 break-inside-avoid">
+            <a href={item.links.html} target="_blank" rel="noopener noreferrer" aria-label="View this photo on Unsplash">
+              <img
+                src={item.urls.regular}
+                alt={item.description || 'Photo by Çalgan Aygün'}
+                width={item.width}
+                height={item.height}
+                loading="lazy"
+                decoding="async"
+                class="w-full h-auto rounded"
+              />
+            </a>
+          </div>
+        )) : null
+      }
+    </div>
+  </div>
+
+  <Fragment slot="footer">
+    <Footer />
+  </Fragment>
+</BaseLayout>

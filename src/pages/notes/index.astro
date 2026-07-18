@@ -1,0 +1,50 @@
+---
+export const prerender = false;
+
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Header from '@comp/Header.astro';
+import Footer from '@comp/Footer.astro';
+import { getStories as getMediumPosts } from '@lib/medium';
+import { getStories as getDevtoPosts } from '@lib/devto';
+
+const mediumPosts = await getMediumPosts();
+const devtoPosts = await getDevtoPosts();
+const posts = [...mediumPosts, ...devtoPosts]
+  .sort((a, b) => b.date.getTime() - a.date.getTime());
+---
+
+<BaseLayout title="Notes" description="Articles and notes by Çalgan Aygün from Medium and dev.to.">
+  <Fragment slot="header">
+    <Header active="/notes" />
+  </Fragment>
+
+  <div class="c-small">
+    <h1 class="text-2xl text-highlight">Notes to myself</h1>
+    <p>
+      My Medium and dev.to articles are automatically added here :)
+    </p>
+
+    <div class="mt-20">
+      {posts.length ? (
+        posts.map((post) => (
+          <article class="mb-10">
+            <h2 class="text-lg leading-6 font-bold text-highlight">
+              <a href={post.url} target="_blank" rel="noopener noreferrer" class="hover:underline">
+                {post.title}
+              </a>
+            </h2>
+            <p>
+              <time datetime={post.date.toISOString()}>{post.readableDate}</time>
+            </p>
+          </article>
+        ))
+      ) : (
+        <p>No notes written yet. Interesting...</p>
+      )}
+    </div>
+  </div>
+
+  <Fragment slot="footer">
+    <Footer />
+  </Fragment>
+</BaseLayout>

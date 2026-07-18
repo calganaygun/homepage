@@ -1,0 +1,54 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Header from '@comp/Header.astro';
+import Footer from '@comp/Footer.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const notes = await getCollection('notes');
+  return notes.map((note) => ({
+    params: { slug: note.id },
+    props: { note },
+  }));
+}
+
+// Keep this prerendered since it's local MDX content, no external API calls
+export const prerender = true;
+
+const { note } = Astro.props;
+const { Content } = await render(note);
+---
+
+<BaseLayout title={note.data.title} description={note.data.excerpt} type="article">
+  <Fragment slot="header">
+    <Header active="/notes" />
+  </Fragment>
+
+  <div class="c-small">
+    <article>
+      <header>
+        <h1 class="text-4xl font-bold text-highlight">
+          {note.data.title}
+        </h1>
+        {note.data.excerpt ? (
+          <p class="mt-2 text-xl">{note.data.excerpt}</p>
+        ) : null}
+        {note.data.date ? (
+          <time datetime={note.data.date.toISOString()} class="flex mt-2 text-gray-400 dark:text-gray-600">
+            {note.data.date instanceof Date
+              ? note.data.date.toISOString().slice(0, 10)
+              : note.data.date}
+          </time>
+        ) : null}
+      </header>
+      <hr class="my-6 border-gray-700" />
+      <div class="prose dark:prose-invert">
+        <Content />
+      </div>
+    </article>
+  </div>
+
+  <Fragment slot="footer">
+    <Footer />
+  </Fragment>
+</BaseLayout>

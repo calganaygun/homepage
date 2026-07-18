@@ -1,0 +1,70 @@
+---
+const MENU: Record<string, string> = {
+  '/': 'Home',
+  '/photos': 'Photos',
+  '/notes': 'Notes',
+  '/bookmarks': 'Bookmarks'
+};
+
+const { active } = Astro.props;
+const requestedPath = active || Astro.url.pathname;
+const firstSegment = requestedPath === '/' ? '/' : `/${requestedPath.split('/').filter(Boolean)[0] ?? ''}`;
+const pathname = firstSegment in MENU ? firstSegment : '';
+---
+
+<header class="pt-6">
+  <div class="c-small text-lg">
+    <button
+      type="button"
+      class="flex items-center"
+      aria-controls="site-navigation"
+      aria-expanded="false"
+      data-menu-button
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        aria-hidden="true"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 8h16M4 16h16" />
+      </svg>
+      <span class="ml-2">{MENU[pathname] || 'Menu'}</span>
+    </button>
+    <nav
+      id="site-navigation"
+      aria-label="Primary navigation"
+      class="hidden flex-col space-y-2 md:flex-row md:space-x-4 md:space-y-0"
+      data-menu-nav
+    >
+      {Object.entries(MENU).map(([url, label]) => (
+        <a href={url} aria-current={pathname === url ? 'page' : undefined} class="hover:underline">
+          {label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<script>
+  const initializeMenu = () => {
+    const button = document.querySelector<HTMLButtonElement>('[data-menu-button]');
+    const nav = document.querySelector<HTMLElement>('[data-menu-nav]');
+
+    if (!button || !nav || button.dataset.initialized) return;
+    button.dataset.initialized = 'true';
+    button.addEventListener('click', () => {
+      button.hidden = true;
+      button.setAttribute('aria-expanded', 'true');
+      nav.classList.remove('hidden');
+      nav.classList.add('flex');
+      nav.querySelector<HTMLAnchorElement>('a')?.focus();
+    });
+  };
+
+  initializeMenu();
+  document.addEventListener('astro:page-load', initializeMenu);
+</script>

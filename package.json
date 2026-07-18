@@ -2,48 +2,28 @@
   "name": "calganaygun-website",
   "description": "my personal website",
   "private": true,
-  "version": "1.0.0",
-  "author": "Çalgan Aygün <calganaygun@gmail.com>",
+  "version": "2.0.0",
+  "author": "Çalgan Aygün <hey@calgan.dev>",
   "license": "MIT",
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "dev": "astro dev",
+    "check": "astro check",
+    "build": "astro check && astro build",
+    "preview": "astro preview"
   },
   "dependencies": {
-    "@auth0/auth0-react": "^1.6.0",
-    "@tailwindcss/typography": "^0.4.1",
-    "airtable": "^0.11.1",
-    "classnames": "^2.3.1",
-    "colcade": "^0.2.0",
-    "comma-number": "^2.1.0",
-    "date-fns": "^2.23.0",
-    "dotenv": "^10.0.0",
-    "framer-motion": "^3.10.6",
-    "ioredis": "^4.27.7",
-    "isomorphic-unfetch": "^3.1.0",
-    "lodash.groupby": "^4.6.0",
-    "nanoid": "^3.1.25",
-    "next": "^16.1.6",
-    "next-mdx": "^0.6.1",
-    "next-pwa": "^5.2.25",
-    "preact": "^10.5.14",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "swr": "^1.0.0"
+    "@astrojs/cloudflare": "^14.1.3",
+    "@astrojs/mdx": "^7.0.3",
+    "@astrojs/sitemap": "^3.7.3",
+    "@tailwindcss/vite": "^4.3.3",
+    "@tailwindcss/typography": "^0.5.20",
+    "astro": "^7.1.1",
+    "date-fns": "^2.30.0",
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
-    "@types/node": "^16.7.4",
-    "@types/react": "^19.2.10",
-    "@types/react-dom": "^19.2.3",
-    "autoprefixer": "^10.3.3",
-    "postcss": "^8.3.6",
-    "prettier": "^2.3.2",
-    "rss": "^1.2.2",
-    "tailwindcss": "^2.2.8",
-    "typescript": "^5.9.3"
-  },
-  "volta": {
-    "node": "22.13.0"
+    "@astrojs/check": "^0.9.9",
+    "typescript": "^5.9.0"
   }
 }

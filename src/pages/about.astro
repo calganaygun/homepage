@@ -1,0 +1,26 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Header from '@comp/Header.astro';
+import Footer from '@comp/Footer.astro';
+
+export const prerender = true;
+---
+
+<BaseLayout title="About" description="About Çalgan Aygün, a software developer based in Warsaw.">
+  <Fragment slot="header">
+    <Header active="/about" />
+  </Fragment>
+
+  <div class="c-small">
+    <h1 class="text-2xl font-bold text-highlight">About</h1>
+    <p class="mt-6">
+      My goal is to produce high-quality content at the same level as global channels
+      in the Turkish tech sector where quality content is scarce, and to lead the way
+      in replacing old habits with better practices to elevate the industry.
+    </p>
+  </div>
+
+  <Fragment slot="footer">
+    <Footer />
+  </Fragment>
+</BaseLayout>

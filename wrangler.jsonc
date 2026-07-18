@@ -1,0 +1,6 @@
+{
+  "name": "calganaygun-website",
+  "main": "@astrojs/cloudflare/entrypoints/server",
+  "compatibility_date": "2026-07-18",
+  "compatibility_flags": ["nodejs_compat"]
+}

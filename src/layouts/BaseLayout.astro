@@ -1,0 +1,78 @@
+---
+import '../styles/globals.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+}
+
+const siteConfig = {
+  title: 'Çalgan Aygün',
+  description: 'Sharing things that inspire me',
+  lang: 'en',
+  siteUrl: 'https://calganaygun.com',
+};
+
+const { title, description, image = '/static/notes/speaker_profile_square.jpeg', type = 'website', noindex = false } = Astro.props;
+const pageTitle = title ? `${title} — ${siteConfig.title}` : siteConfig.title;
+const pageDescription = description || siteConfig.description;
+const canonicalUrl = new URL(Astro.url.pathname, siteConfig.siteUrl);
+const socialImageUrl = new URL(image, siteConfig.siteUrl);
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: siteConfig.title,
+  url: siteConfig.siteUrl,
+  image: socialImageUrl.href,
+  email: 'mailto:hey@calgan.dev',
+  jobTitle: 'Software Developer',
+  sameAs: [
+    'https://github.com/calganaygun',
+    'https://instagram.com/calganaygun',
+    'https://linkedin.com/in/calganaygun',
+    'https://g.dev/calgan'
+  ]
+};
+---
+
+<!doctype html>
+<html lang={siteConfig.lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={pageDescription} />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'} />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111827" />
+    <title>{pageTitle}</title>
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={siteConfig.title} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:alt" content={`${siteConfig.title} profile photo`} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={socialImageUrl} />
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/icons/icon-favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/icons/icon-favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/static/icons/icon-apple-touch-icon.png" />
+    <link rel="preload" href="/fonts/Inter-roman.var.woff2?v=3.15" as="font" type="font/woff2" crossorigin="anonymous" />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(personJsonLd)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <slot name="header" />
+    <main id="main-content" class="page-transition py-14" tabindex="-1">
+      <slot />
+    </main>
+    <slot name="footer" />
+  </body>
+</html>
