@@ -19,6 +19,7 @@ export async function getStories(): Promise<Story[]> {
     const response = await fetch(`https://dev.to/api/articles?username=${DEVTO_USERNAME}`, {
       headers: {
         Accept: 'application/vnd.forem.api-v1+json',
+        'User-Agent': 'calganaygun-website/2.0 (+https://calganaygun.com)',
       },
     });
     if (!response.ok) throw new Error(`dev.to API returned ${response.status}`);
