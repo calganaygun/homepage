@@ -1,4 +1,4 @@
-# Calgan Aygün — Personal Website
+# Calgan — Personal Website
 
 Built with [Astro](https://astro.build). Fully static output.
 
