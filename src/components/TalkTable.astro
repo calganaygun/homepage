@@ -1,0 +1,28 @@
+---
+import { formatTalkDate, type Talk } from '../lib/talks';
+
+interface Props {
+  talks: Talk[];
+  caption: string;
+}
+
+const { talks, caption } = Astro.props;
+---
+
+<div class="overflow-x-auto">
+  <table class="!my-2 text-sm">
+    <caption class="sr-only">{caption}</caption>
+    <thead>
+      <tr><th scope="col">Date</th><th scope="col">Event</th><th scope="col">Session</th></tr>
+    </thead>
+    <tbody>
+      {talks.map((talk) => (
+        <tr>
+          <td class="whitespace-nowrap"><time datetime={talk.date}>{formatTalkDate(talk.date)}</time></td>
+          <td>{talk.url ? <a href={talk.url}>{talk.event}</a> : talk.event}</td>
+          <td>{talk.title}{talk.time && <span class="whitespace-nowrap"> · {talk.time}</span>}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

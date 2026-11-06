@@ -2,20 +2,15 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Header from '@comp/Header.astro';
 import Footer from '@comp/Footer.astro';
-import { getCollection, render } from 'astro:content';
+import { getEntry, render } from 'astro:content';
 
-export async function getStaticPaths() {
-  const notes = await getCollection('notes');
-  return notes.map((note) => ({
-    params: { slug: note.id },
-    props: { note },
-  }));
-}
+// Render on every request so dated talks move to the archive without a rebuild.
+export const prerender = false;
 
-// Keep this prerendered since it's local MDX content, no external API calls
-export const prerender = true;
-
-const { note } = Astro.props;
+const slug = Astro.params.slug;
+const note = slug ? await getEntry('notes', slug) : undefined;
+if (!note) return Astro.redirect('/404');
+Astro.response.headers.set('Cache-Control', 'no-store');
 const { Content } = await render(note);
 ---
 
