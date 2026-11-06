@@ -1,0 +1,21 @@
+---
+import talks from '../data/talks.json';
+import { groupTalks } from '../lib/talks';
+import TalkTable from './TalkTable.astro';
+
+const { upcoming, past } = groupTalks(talks);
+---
+
+<section aria-labelledby="upcoming-talks">
+  <h2 id="upcoming-talks">Upcoming talks</h2>
+  {upcoming.length > 0
+    ? <TalkTable talks={upcoming} caption="Upcoming talks" />
+    : <p>No upcoming talks announced.</p>}
+</section>
+
+{past.length > 0 && (
+  <details class="mt-4">
+    <summary class="cursor-pointer text-sm font-semibold">Past talks ({past.length})</summary>
+    <TalkTable talks={past} caption="Past talks, most recent first" />
+  </details>
+)}

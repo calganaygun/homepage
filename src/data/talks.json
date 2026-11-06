@@ -1,0 +1,101 @@
+[
+  {
+    "date": "2026-11-03",
+    "event": "Warsaw",
+    "title": "Event-Driven AI Pipelines on GCP: Building Systems with Eventarc, Cloud Run & Gemini",
+    "url": "https://cloudonair.withgoogle.com/events/summit-builder-connect-poland-2026"
+  },
+  {
+    "date": "2026-10-29",
+    "event": "Kraków",
+    "title": "Trust No Pipeline: Securing Software Delivery and Workload Identity in the Cloud",
+    "url": "https://gdg.community.dev/events/details/google-gdg-cloud-krakow-presents-trust-no-pipeline-securing-software-delivery-and-workload-identity-in-the-cloud/"
+  },
+  {
+    "date": "2026-10-10",
+    "event": "Kraków",
+    "title": "Event-Driven AI Pipelines on GCP: From Eventarc to LLMs",
+    "url": "https://gdg.community.dev/events/details/google-gdg-krakow-presents-devfest-krakow-2026/"
+  },
+  {
+    "date": "2026-08-12",
+    "event": "Online",
+    "title": "Foundations of Building Agent Systems on ADK",
+    "url": "https://bursa.dev/event-detail/foundations-of-building-agent-systems-on-adk-bc0f5fa1"
+  },
+  {
+    "date": "2026-06-26",
+    "event": "Gdańsk",
+    "title": "Build Multi-Agent Systems with Google ADK",
+    "url": "https://gdg.community.dev/events/details/google-gdg-3city-presents-build-with-ai-hands-on-workshop-build-multi-agent-systems-with-google-adk/"
+  },
+  {
+    "date": "2026-05-14",
+    "event": "Wrocław",
+    "title": "Building and Scaling Secure Agents: MCP, ADK and Cloud Run",
+    "url": "https://gdg.community.dev/events/details/google-gdg-wroclaw-presents-building-and-scaling-secure-agents-mcp-adk-and-cloud-run/"
+  },
+  {
+    "date": "2026-05-30",
+    "event": "Poznań",
+    "title": "Build with AI: Exploring LLMs, AI Studio and Cloud Run",
+    "url": "https://gdg.community.dev/events/details/google-gdg-on-campus-collegium-da-vinci-poznan-poland-presents-digifest-fate-of-juniors/"
+  },
+  {
+    "date": "2026-04-21",
+    "event": "Kraków",
+    "title": "Build with AI Krakow #4: MCP, ADK and Cloud Run",
+    "url": "https://gdg.community.dev/events/details/google-gdg-krakow-presents-build-with-ai-4-production-ready-ai-agents-hybrid-workshop/"
+  },
+  {
+    "date": "2025-07-20",
+    "event": "Ankara",
+    "title": "Google I/O Extended Ankara - AI Studio and Cloud Run",
+    "url": "https://kommunity.com/gdgankara/events/google-io-extended-2025-ankara-unveiling-the-future-of-tech-62210361"
+  },
+  {
+    "date": "2025-07-05",
+    "event": "İzmir",
+    "title": "Google I/O Extended İzmir",
+    "url": "https://gdg.community.dev/events/details/google-gdg-izmir-presents-google-io-extended-izmir/"
+  },
+  {
+    "date": "2025-06-14",
+    "event": "Ankara",
+    "title": "Gemini for Applications: Developing Features with AI",
+    "url": "https://gdg.community.dev/e/mjkujn/"
+  },
+  {
+    "date": "2025-04-19",
+    "event": "İzmir",
+    "title": "Gemini for Applications: Developing Features with AI",
+    "url": "https://gdg.community.dev/events/details/google-gdg-izmir-presents-build-with-ai25/cohost-gdg-izmir"
+  },
+  {
+    "date": "2025-03-22",
+    "event": "Ankara",
+    "title": "Quickstart with LLMs on Cloud (Gemini)",
+    "url": "https://lu.ma/9acp8jb4?locale=tr"
+  },
+  {
+    "date": "2026-11-13",
+    "event": "DevFest Wrocław",
+    "title": "Cloud panel",
+    "time": "17:00 CET",
+    "url": "https://gdg.community.dev/events/details/google-gdg-wroclaw-presents-google-devfest-2026-wroclaw/"
+  },
+  {
+    "date": "2026-11-14",
+    "event": "DevFest Wrocław",
+    "title": "Event-Driven AI Pipelines on GCP: From Eventarc to LLMs",
+    "time": "19:05–19:35 CET",
+    "url": "https://gdg.community.dev/events/details/google-gdg-wroclaw-presents-google-devfest-2026-wroclaw/"
+  },
+  {
+    "date": "2026-11-21",
+    "event": "DevFest Warszawa",
+    "title": "Event-Driven AI Pipelines on GCP: From Eventarc to LLMs",
+    "time": "Time TBA",
+    "url": "https://warsaw.devfest.pl/"
+  }
+]
