@@ -19,7 +19,7 @@ const { talks, caption } = Astro.props;
       {talks.map((talk) => (
         <tr>
           <td class="whitespace-nowrap"><time datetime={talk.date}>{formatTalkDate(talk.date)}</time></td>
-          <td><a href={talk.url}>{talk.event}</a></td>
+          <td>{talk.url ? <a href={talk.url}>{talk.event}</a> : talk.event}</td>
           <td>{talk.title}{talk.time && <span class="whitespace-nowrap"> · {talk.time}</span>}</td>
         </tr>
       ))}

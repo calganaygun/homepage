@@ -2,7 +2,7 @@ export interface Talk {
   date: string;
   event: string;
   title: string;
-  url: string;
+  url?: string;
   time?: string;
 }
 

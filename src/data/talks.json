@@ -64,8 +64,8 @@
   },
   {
     "date": "2026-04-21",
-    "event": "Kraków",
-    "title": "Build with AI Krakow #4: MCP, ADK and Cloud Run",
+    "event": "Build with AI #4 · Kraków",
+    "title": "Building and Scaling Secure Agents: MCP, ADK and Cloud Run",
     "url": "https://gdg.community.dev/events/details/google-gdg-krakow-presents-build-with-ai-4-production-ready-ai-agents-hybrid-workshop/"
   },
   {
@@ -76,8 +76,8 @@
   },
   {
     "date": "2025-07-05",
-    "event": "İzmir",
-    "title": "Google I/O Extended İzmir",
+    "event": "Google I/O Extended İzmir",
+    "title": "What's New in AI Studio?",
     "url": "https://gdg.community.dev/events/details/google-gdg-izmir-presents-google-io-extended-izmir/"
   },
   {
@@ -94,9 +94,15 @@
   },
   {
     "date": "2025-03-22",
-    "event": "Ankara",
+    "event": "CSCON '25 · Ankara",
     "title": "Quickstart with LLMs on Cloud (Gemini)",
     "url": "https://lu.ma/9acp8jb4?locale=tr"
+  },
+  {
+    "date": "2024-09-15",
+    "event": "GDG Cloud Ankara",
+    "title": "Cloud Fundamentals #2",
+    "url": "https://gdg.community.dev/events/details/google-gdg-cloud-ankara-presents-cloud-fundamentals-2/"
   },
   {
     "date": "2024-06-30",
@@ -123,10 +129,33 @@
     "url": "https://gdg.community.dev/events/details/google-gdg-samsun-presents-devfest-2023-gdg-samsun/"
   },
   {
+    "date": "2022-12-23",
+    "event": "GDG Urfa · Online",
+    "title": "DevFest '22 Urfa"
+  },
+  {
+    "date": "2022-12-17",
+    "event": "DevFest İzmir '22",
+    "title": "Building event-driven applications with Cloud Run: Eventarc",
+    "url": "https://gdg.community.dev/events/details/google-gdg-izmir-presents-gdg-devfest-izmir22/"
+  },
+  {
     "date": "2022-11-09",
     "event": "Cloud Türkiye",
     "title": "Building event-driven applications with Cloud Run: Eventarc",
     "url": "https://kommunity.com/cloud-turkiye/events/building-event-driven-applications-with-cloud-run-eventarc-c06878dc"
+  },
+  {
+    "date": "2022-10-22",
+    "event": "Eskişehir · Anadolu University",
+    "title": "DevFest 22",
+    "url": "https://gazete.anadolu.edu.tr/kampus/41097/universitemizdeki-devfest-22-yogun-ilgi-gordu"
+  },
+  {
+    "date": "2022-09-25",
+    "event": "GDG Cloud Ankara",
+    "title": "Google Cloud Sertifikalarına Hazırlık #2",
+    "url": "https://gdg.community.dev/events/details/google-gdg-cloud-ankara-presents-google-cloud-sertifikalarina-hazirlik-2/"
   },
   {
     "date": "2022-08-20",
@@ -139,6 +168,11 @@
     "event": "Ankara",
     "title": "DevFest Ankara '21",
     "url": "https://kommunity.com/gdg-ankara/events/devfest-ankara-21-d7a27d80"
+  },
+  {
+    "date": "2021-10-16",
+    "event": "GDSC Akdeniz · Cloud Jam-a-thon",
+    "title": "Set Up Network and HTTP Load Balancers"
   },
   {
     "date": "2021-02-10",
