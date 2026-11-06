@@ -1,7 +1,28 @@
 [
   {
+    "date": "2026-11-21",
+    "event": "DevFest Warszawa",
+    "title": "Event-Driven AI Pipelines on GCP: From Eventarc to LLMs",
+    "time": "Time TBA",
+    "url": "https://warsaw.devfest.pl/"
+  },
+  {
+    "date": "2026-11-14",
+    "event": "DevFest Wrocław",
+    "title": "Event-Driven AI Pipelines on GCP: From Eventarc to LLMs",
+    "time": "19:05–19:35 CET",
+    "url": "https://gdg.community.dev/events/details/google-gdg-wroclaw-presents-google-devfest-2026-wroclaw/"
+  },
+  {
+    "date": "2026-11-13",
+    "event": "DevFest Wrocław",
+    "title": "Cloud panel",
+    "time": "17:00 CET",
+    "url": "https://gdg.community.dev/events/details/google-gdg-wroclaw-presents-google-devfest-2026-wroclaw/"
+  },
+  {
     "date": "2026-11-03",
-    "event": "Warsaw",
+    "event": "Google Cloud BuilderConnect Poland",
     "title": "Event-Driven AI Pipelines on GCP: Building Systems with Eventarc, Cloud Run & Gemini",
     "url": "https://cloudonair.withgoogle.com/events/summit-builder-connect-poland-2026"
   },
@@ -13,7 +34,7 @@
   },
   {
     "date": "2026-10-10",
-    "event": "Kraków",
+    "event": "DevFest Kraków",
     "title": "Event-Driven AI Pipelines on GCP: From Eventarc to LLMs",
     "url": "https://gdg.community.dev/events/details/google-gdg-krakow-presents-devfest-krakow-2026/"
   },
@@ -30,16 +51,16 @@
     "url": "https://gdg.community.dev/events/details/google-gdg-3city-presents-build-with-ai-hands-on-workshop-build-multi-agent-systems-with-google-adk/"
   },
   {
-    "date": "2026-05-14",
-    "event": "Wrocław",
-    "title": "Building and Scaling Secure Agents: MCP, ADK and Cloud Run",
-    "url": "https://gdg.community.dev/events/details/google-gdg-wroclaw-presents-building-and-scaling-secure-agents-mcp-adk-and-cloud-run/"
-  },
-  {
     "date": "2026-05-30",
     "event": "Poznań",
     "title": "Build with AI: Exploring LLMs, AI Studio and Cloud Run",
     "url": "https://gdg.community.dev/events/details/google-gdg-on-campus-collegium-da-vinci-poznan-poland-presents-digifest-fate-of-juniors/"
+  },
+  {
+    "date": "2026-05-14",
+    "event": "Wrocław",
+    "title": "Building and Scaling Secure Agents: MCP, ADK and Cloud Run",
+    "url": "https://gdg.community.dev/events/details/google-gdg-wroclaw-presents-building-and-scaling-secure-agents-mcp-adk-and-cloud-run/"
   },
   {
     "date": "2026-04-21",
@@ -78,24 +99,51 @@
     "url": "https://lu.ma/9acp8jb4?locale=tr"
   },
   {
-    "date": "2026-11-13",
-    "event": "DevFest Wrocław",
-    "title": "Cloud panel",
-    "time": "17:00 CET",
-    "url": "https://gdg.community.dev/events/details/google-gdg-wroclaw-presents-google-devfest-2026-wroclaw/"
+    "date": "2024-06-30",
+    "event": "GDG Cloud Ankara",
+    "title": "Build with AI: Production Ready AI Apps with Firebase Genkit",
+    "url": "https://kommunity.com/gdg-cloud-ankara/events/build-with-ai-production-ready-ai-apps-with-firebase-genkit-e8e33513"
   },
   {
-    "date": "2026-11-14",
-    "event": "DevFest Wrocław",
-    "title": "Event-Driven AI Pipelines on GCP: From Eventarc to LLMs",
-    "time": "19:05–19:35 CET",
-    "url": "https://gdg.community.dev/events/details/google-gdg-wroclaw-presents-google-devfest-2026-wroclaw/"
+    "date": "2023-12-17",
+    "event": "Ankara",
+    "title": "DevFest Ankara '23",
+    "url": "https://kommunity.com/gdg-ankara/events/devfest-ankara-23-2a5329aa"
   },
   {
-    "date": "2026-11-21",
-    "event": "DevFest Warszawa",
-    "title": "Event-Driven AI Pipelines on GCP: From Eventarc to LLMs",
-    "time": "Time TBA",
-    "url": "https://warsaw.devfest.pl/"
+    "date": "2023-11-25",
+    "event": "GDG Cloud Ankara",
+    "title": "LLMs in Action",
+    "url": "https://kommunity.com/gdg-cloud-ankara/events/llms-in-action-ddff0b5c"
+  },
+  {
+    "date": "2023-11-06",
+    "event": "DevFest Samsun",
+    "title": "Unlocking App Potential with Cloud & LLMs",
+    "url": "https://gdg.community.dev/events/details/google-gdg-samsun-presents-devfest-2023-gdg-samsun/"
+  },
+  {
+    "date": "2022-11-09",
+    "event": "Cloud Türkiye",
+    "title": "Building event-driven applications with Cloud Run: Eventarc",
+    "url": "https://kommunity.com/cloud-turkiye/events/building-event-driven-applications-with-cloud-run-eventarc-c06878dc"
+  },
+  {
+    "date": "2022-08-20",
+    "event": "GDG Cloud Ankara",
+    "title": "Google Cloud Sertifikalarına Hazırlık",
+    "url": "https://kommunity.com/gdg-cloud-ankara/events/google-cloud-sertifikalarina-hazirlik-25d4006c"
+  },
+  {
+    "date": "2021-11-13",
+    "event": "Ankara",
+    "title": "DevFest Ankara '21",
+    "url": "https://kommunity.com/gdg-ankara/events/devfest-ankara-21-d7a27d80"
+  },
+  {
+    "date": "2021-02-10",
+    "event": "DSC Çankaya DEV.LIGHT",
+    "title": "Cloud Talks",
+    "url": "https://ceng.cankaya.edu.tr/tr/events/2021020814-devlight/"
   }
 ]
